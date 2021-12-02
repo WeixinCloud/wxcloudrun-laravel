@@ -2,6 +2,8 @@
 # 选择构建用基础镜像（选择原则：在包含所有用到的依赖前提下尽可能提及小）。如需更换，请到[dockerhub官方仓库](https://hub.docker.com/_/php?tab=tags)自行选择后替换。
 FROM php:7.3-fpm-alpine3.13
 
+LABEL maintainer="gangweiran<gangweiran@tencent.com>"
+
 # 安装依赖包
 RUN apk --no-cache --update add nginx \
     && docker-php-ext-install pdo_mysql
