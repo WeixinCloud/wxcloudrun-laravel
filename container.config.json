@@ -11,10 +11,10 @@
 	"policyThreshold": 60,                          // 扩缩容条件：使用率超过60%触发
 	"envParams": {},                                // 环境变量。可以有多个。
 	"customLogs": "stdout",                         // 日志采集路径
-	"dataBaseName":"thinkphp_demo",                   // 创建的数据库表的名称
+	"dataBaseName":"thinkphp_laravel",                   // 创建的数据库表的名称
 	"executeSQLs":[
-		"CREATE DATABASE IF NOT EXISTS thinkphp_demo;",
-		"USE thinkphp_demo;",
+		"CREATE DATABASE IF NOT EXISTS thinkphp_laravel;",
+		"USE thinkphp_laravel;",
 		"CREATE TABLE IF NOT EXISTS `Counters` (`id` int(11) NOT NULL AUTO_INCREMENT, `count` int(11) NOT NULL DEFAULT 1, `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE = InnoDB DEFAULT CHARSET = utf8;"
 	]   
 }
