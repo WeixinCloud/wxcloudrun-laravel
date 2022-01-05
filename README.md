@@ -23,6 +23,9 @@
 ├── composer.json               composer 文件
 ├── composer.lock               composer 文件
 ├── conf                        配置文件
+│   ├── fpm.conf                fpm 配置
+│   ├── nginx.conf              nginx 配置
+│   └── php.ini                 php 配置
 ├── config                      应用所有的配置文件   
 ├── container.config.json       微信云托管流水线配置
 ├── database                    数据库迁移文件及填充文件
