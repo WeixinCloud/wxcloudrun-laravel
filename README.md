@@ -109,6 +109,38 @@ curl https://<云托管服务域名>/api/count
 curl -X POST -H 'content-type: application/json' -d '{"action": "inc"}' https://<云托管服务域名>/api/count
 ```
 
+
+## 本地调试
+使用 VSCode 插件，可以在支持 Docker 环境的系统进行本地调试云调用,更多信息请看 [本地调试中如何使用「开放接口服务」](https://developers.weixin.qq.com/miniprogram/dev/wxcloudrun/src/guide/weixin/open.html#%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E3%80%8C%E5%BC%80%E6%94%BE%E6%8E%A5%E5%8F%A3%E6%9C%8D%E5%8A%A1%E3%80%8D)
+### 本地运行前置要求
+项目从环境变量中获取了数据库相关信息，这样设计主要考虑到容器和容器配置信息的安全性。
+有哪些信息可以看项目config.php 中mysql 配置部分，项目本地运行可能会给你提醒undefine异常就是因为无法获取必备的环境变量信息：
+```ini
+MYSQL_ADDRESS=云数据库外网地址:26892
+MYSQL_PASSWORD=密码
+MYSQL_USERNAME=用户名
+MYSQL_DATABASE=实例名称
+```
+本地可以选择直接加到环境变量来避开异常信息:
+```bash
+export MYSQL_ADDRESS=云数据库外网地址:26892
+export MYSQL_PASSWORD=密码
+export MYSQL_USERNAME=用户名
+export MYSQL_DATABASE=实例名称
+```
+
+### 一键安装
+一键安装我们可以依赖docker-composer来帮助我们完成整个服务的部署。本地一键部署一样需要我们给容器植入环境变量。
+此项目提供的`docker-compose.yml` 文件中已经帮我们植入了环境变量，默认使用本地`.env-local`配置文件。如果你有自己的配置文件请修改配置。
+
+####  一键部署
+```bash
+docker-compose up -d
+```
+项目本地会启用 8000端口提供服务。本地直接更新代码刷新即可以看到效果。`docker-compose`的更多使用详情请看官网文档。
+
+
+
 ## License
 
 [MIT](./LICENSE)

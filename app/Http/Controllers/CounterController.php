@@ -14,14 +14,13 @@ namespace App\Http\Controllers;
 use Error;
 use Exception;
 use App\Counters;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 
 class CounterController extends Controller
 {
     /**
      * 获取todo list
-     * @return Json
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getCount()
     {
@@ -53,7 +52,7 @@ class CounterController extends Controller
     /**
      * 根据id查询todo数据
      * @param $action `string` 类型，枚举值，等于 `"inc"` 时，表示计数加一；等于 `"reset"` 时，表示计数重置（清零）
-     * @return Json
+     * @return \Illuminate\Http\JsonResponse |\Throwable
      */
     public function updateCount()
     {
@@ -66,14 +65,14 @@ class CounterController extends Controller
                 }else {
                     $count = $data["count"] + 1;
                 }
-    
+
                 $counters = new Counters;
                 $counters->updateOrCreate(['id' => 1], ["count" => $count]);
             }else if ($action == "clear") {
                 Counters::destroy(1);
                 $count = 0;
             }else {
-                throw '参数action错误';
+                throw new Exception('参数action错误');
             }
 
             $res = [
