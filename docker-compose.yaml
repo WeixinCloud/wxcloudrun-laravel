@@ -1,0 +1,26 @@
+# author: ishirkhan
+version: "3.5"
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+volumes:
+  mysql:
+    driver: local
+
+services:
+  ### wechat-app Server #########################################
+  wechatapp:
+    build:
+      context: .
+    volumes:
+      - ./:/app
+    ports:
+      - "8000:80"
+    env_file:
+      - .env-local
+    networks:
+      - frontend
+      - backend
