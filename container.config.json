@@ -11,7 +11,7 @@
 	"policyType": "cpu",                          
 	"policyThreshold": 60,                        
 	"envParams": {},                              
-	"customLogs": "stdout",                       
+	"customLogs": "/app/storage/logs/*",                       
 	"dataBaseName":"laravel_demo",                
 	"executeSQLs":[
 		"CREATE DATABASE IF NOT EXISTS laravel_demo;",
