@@ -30,7 +30,7 @@
 │   ├── nginx.conf              nginx 配置
 │   └── php.ini                 php 配置
 ├── config                      应用所有的配置文件   
-├── container.config.json       微信云托管流水线配置
+├── container.config.json       模板部署「服务设置」初始化配置（二开请忽略）
 ├── database                    数据库迁移文件及填充文件
 ├── public                      应用入口文件 index.php 和前端资源文件
 ├── resources                   应用视图文件和未编译的原生前端资源文件
