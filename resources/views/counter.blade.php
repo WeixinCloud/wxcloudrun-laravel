@@ -207,7 +207,7 @@
     <div class="title">
       <img class="title-logo"
         src="https://static-index-4gtuqm3bfa95c963-1304825656.tcloudbaseapp.com/official-website/favicon.svg" />
-      <div style="display: inline; margin-bottom: 48px" class="title-text">欢迎使用微信云托管</div>
+      <div style="display: inline; margin-bottom: 48px" class="title-text">欢迎使用微信云托管haha</div>
     </div>
     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; margin: 0">
       <span class="count-text">
